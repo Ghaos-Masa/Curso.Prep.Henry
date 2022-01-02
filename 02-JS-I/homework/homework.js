@@ -132,7 +132,7 @@ function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
-  return Math.pow(num,num);
+  return Math.pow(num,2);
 }
 
 function elevarAlCubo(num) {
@@ -192,7 +192,8 @@ function combinarNombres(nombre, apellido) {
   // Devuelve "nombre" y "apellido" combinados en una string y separados por un espacio.
   // Ejemplo: "Soy", "Henry" -> "Soy Henry"
   // Tu código:
-  return nombre + '' + apellido;
+  var combinado = nombre + ' ' + apellido;
+  return combinado;
 }
 
 function obtenerSaludo(nombre) {
