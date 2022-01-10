@@ -25,9 +25,9 @@ function incrementarPorUno(array) {
   // "array" debe ser una matriz de enteros (int/integers)
   // Aumenta cada entero por 1
   // y devuelve el array
-  // Tu código:
-  var num = []
-  for (var i = 0; i < array.length; i++) {
+  // Tu código: 
+  var num = []                                  //var arra1 = arrat.map((elemento) => elemento +1)
+ for (var i = 0; i < array.length; i++) {
     num[i] = array[i] +1;
   }
   return num
@@ -67,33 +67,40 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  return array.includes(elemento)
-}
+  return array.includes(elemento)         // for(var I =0; i < array.length; i++)
+}                                         // if (array[i] === 0)  
 
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
-  let sum = 0;
-
-  for (let i = 0; i < numeros.length; i++) {
-     sum += numeros[i];
-  }
-  return sum
+  let sum = 0;                                    // return numero.reduce()
+  for (let i = 0; i < numeros.length; i++) {      //   
+     sum = sum + numeros[i];                      //  
+  }                                               // 
+  return sum                                      //
 }
+                                                  
 
 
 function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  let sum = 0;
+  // let sum = 0;
 
-  for (let i = 0; i < resultadosTest.length; i++) {
-     sum += resultadosTest[i];
+  // for (let i = 0; i < resultadosTest.length; i++) {
+  //    sum += resultadosTest[i];
+  // }
+  // return sum / resultadosTest.length;
+  var suma=0
+  var promedio=0
+  for(var i =0; i < resultadosTest.length; i++){
+    suma = suma + resultadosTest[i]
   }
-  return sum / resultadosTest.length;
+  promedio = suma / resultadosTest.length
+  return promedio
 }
 
 
@@ -101,7 +108,7 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var mayor = 0;
+  var mayor = 0;                            // return Match.max(...numero)
  
   for(var i = 0; i < numeros.length; i++){
     if (numeros[i] > mayor)
@@ -117,14 +124,19 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if (arguments.length < 1) return 0; 
-  var total = 1
-  for (var i = 0; i < arguments.length; i++){
-  total = total * arguments[i];
-    }
-  return total;
+//   if (arguments.length < 1) return 0; 
+//   var total = 1
+//   for (var i = 0; i < arguments.length; i++){
+//   total = total * arguments[i];
+//     }
+//   return total;
+if (arguments.length == 0) return 0
+if (arguments.length == 1)return arguments[0]
+let resultado=1
+for(let i =0;i<arguments.length;i++)
+resultado= resultado*arguments[i] // resultado *= argments[i]
+return resultado
 }
-
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
@@ -132,7 +144,7 @@ function cuentoElementos(arreglo){
   let contador = 0
   for (var i = 0; i < arreglo.length ; i++){    
     if(arreglo[i] > 18){
-       contador++
+       contador = contador + 1
     }
   }
   return contador
@@ -158,7 +170,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   var n = n.toString()
-  if (n.charAt(0)==="9"){
+  if (n.charAt(0)==="9"){  // chartAt busca en primera letra ej [hola] usando esta func. sacaria la "h"
     return true;
   }else{
     return false;
@@ -170,14 +182,20 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  for (var i = 0; i < arreglo.length -1; i++){
-    if(arreglo[i]!==arreglo[i+1]){
-      return false
-    }else{
-      return true
-    }
+  // for (var i = 0; i < arreglo.length -1; i++){
+  //   if(arreglo[i]!==arreglo[i+1]){
+  //     return false
+  //   }else{
+  //     return true
+  //   }
+  // }
+  var comparacion = arreglo[0]
+  for (var i = 1 ; i< arreglo.length; i++){
+  if(arreglo[i] === comparacion)
+  return false
   }
-} 
+  return true
+}
 
 
 function mesesDelAño(array) {
@@ -191,7 +209,7 @@ function mesesDelAño(array) {
       nuevoArray.push(array[i]);
     }
   }
-  if(nuevoArray.length < 3) {
+  if(nuevoArray.length === 3) {
     return "No se encontraron los meses pedidos";
   }
   else {
@@ -222,21 +240,31 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-  var array = [];
-  var suma = numero;
-  for(var i= 0; i<10; i++) {
+  // var array = [];
+  // var suma = numero;
+  // for(var i= 0; i<10; i++) {
+  //   suma = suma + 2;
+  //   if(suma === i) break;
+  //   else {
+  //     array.push(suma);
+  //   }
+  // }
+  // if(i < 10) {
+  //   return 'Se interrumpió la ejecución';
+  // }
+  // else {
+  //     return array;
+  // }
+  var array = []
+  var suma = numero
+  for (var i = 0; i < 10 ; i ++){
     suma = suma + 2;
-    if(suma === i) break;
-    else {
-      array.push(suma);
+    if (suma === i) break
+    else array.push(suma)
+  }
+  if (i<10){
+    return "Se interrumpió la ejecución"
     }
-  }
-  if(i < 10) {
-    return 'Se interrumpió la ejecución';
-  }
-  else {
-      return array;
-  }
 }
 
 
