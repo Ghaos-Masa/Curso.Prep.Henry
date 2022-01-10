@@ -1,0 +1,30 @@
+.divClass{
+    display: block;
+    text-align: center;
+    margin: 20px 30px 10px 
+} 
+
+h1{
+    display: block;
+    text-align: center;
+    font-size: larger;
+    border: brown 5px solid;
+}
+
+h2{
+    display: block;
+    text-align: center;
+    font-size: xx-large;
+}
+
+img{
+    display: block; margin: auto;
+    width: 350px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body{
+
+}
