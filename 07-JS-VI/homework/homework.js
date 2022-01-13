@@ -6,7 +6,7 @@ function mayuscula(nombre) {
   //Tu código:
   
     return nombre.charAt(0).toUpperCase() + nombre.slice(1);
-  
+  // return nombre[0].toUpperCase() + nombre.slice(1)
 }
 
 
@@ -30,7 +30,13 @@ function sumarArray(numeros, cb) {
   // Pasa el resultado a `cb`
   // No es necesario devolver nada
   //Tu código:
-  
+
+  // let = suma
+  // for (let i = 0; i< numeros.length; i++ ){
+  //   suma+=numeros[i]
+  // }
+  // cb(suma)
+
   const suma = numeros.reduce(function (acc, elemento) {
     return acc + elemento;
   });
@@ -57,6 +63,7 @@ function map(array, cb) {
   });
   return newArray;
 }
+// return array.map(e=>cd(e))
 
 function filter(array) {
   //Filtrar todos los elementos del array que comiencen con la letra "a".
@@ -67,6 +74,7 @@ function filter(array) {
   });
   return nuevoArray
 }
+// return array.filter (e => e[0] === 'a')
 
 // No modificar nada debajo de esta línea
 // --------------------------------
